@@ -13,6 +13,9 @@ print("multiplicação: "..4*2)
 --divisão
 print("divisão: "..10/2)
 
+--raiz resto
+print("Resto: "..50%30)
+
 --negação
 print("negação: "..-7)
 
@@ -23,22 +26,25 @@ print("exponenciação: "..2^3)
 print("Raiz quadrada: "..4^0.5)
 
 
+
+
+
 ------------------------Operadores Relacionais-----------------------
 print("----Operadores Relacionais----")
 --menor que 
-print(1<2)
+print("1 menor que 2: ",1<2)
 --maior que 
-print(1>2)
+print("1 maior que 2: ",1>2)
 --menor ou igual
-print(1<=2)
+print("1 menor ou igual que 2: ",1<=2)
 print("coca"<="cola")
 --maior ou igual
-print(1>=2)
+print("1 maior ou igual que 2: ",1>=2)
 --igual 
-print(1==2)
-print({}=={})
+print("1 igual a 2: ",1==2)
+print("igual: ",{}=={})
 --diferente
-print(1~=2)
+print("1 é diferente de 2: ",1~=2)
 
 ------------------------Operadores Lógicos-------------------
 print("----Operadores Lógicos----")

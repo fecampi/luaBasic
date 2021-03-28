@@ -1,5 +1,6 @@
 -------- Como Arrays------
 a = {10, 20, 30}
+-- contador do array
 a["n"] = #a
 a["printar"] = function() print("oi") end
 print(a.n)
@@ -38,24 +39,18 @@ print(a[1])
 table.remove(a)
 print(a[#a])
 
-
------forEach(para cada elemento me retorne chave e valor)
-numbers = {1, 2, "three", 4, "five"}
--- ipars só numericos, pairs pega todos os indices
-for key, value in pairs(numbers) do
-    print(key,value)
-end
+--ordenação 
+print("numeros ordenados")
+numbers = {7,3,2,4,8}
 
 -- concatenando tabelas(dividindo e separando)
 print(table.concat(numbers, ", ", 2, 3))
 
---proximo elemento da tabela
-i,v = next(numbers,2)
-print(i,v)
+-----forEach(para cada elemento me retorne chave e valor)
+table.sort( numbers )
+for key,value in pairs(numbers) do print("indice: " .. key .. ", valor: " .. value) end
 
--- UNPACK - converte tabela em uma tupla {1,2,3} = 1,2,3
-values = {1,2}
-function soma(a,b) return a + b end
-print(soma(table.unpack(values)))
-
+-- proximo elemento da tabela
+i, v = next(numbers, 2)
+print(i, v)
 

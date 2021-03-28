@@ -53,9 +53,9 @@ function soma(parcela)
 end
 
 soma2 = soma(2)
-print(soma2(3))
 
 
+print(soma())
 -----------------multiplos valores de retorno------------
 print("---multiplos valores---")
 function bhask(a, b, c)
