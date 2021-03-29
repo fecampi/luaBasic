@@ -4,8 +4,6 @@ a = 10;
 if (a < 20) then print("a is less than 20") end
 print("value of a is :", a)
 
-
-
 -- if...then...else 
 print("--if...else statement")
 a = 100;
