@@ -36,6 +36,12 @@ print("Hello World!")
 diga = print
 diga("olá mundo")
 
+--recebendo atributo do teclado
+diga("Qual seu nome?")
+name = io.read()
+print("olá "..name)
+io.read()
+
 -- Data Types
 print(type("What is my type")) -- > string
 t = 10
