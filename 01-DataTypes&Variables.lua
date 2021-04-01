@@ -32,14 +32,21 @@ lua -e "print(20+20)"
 ]] -- print
 print("Hello World!")
 
+-- atribuição
+name = "João"
+x = 37
+
+name, number, color = "Maria", 12, "red"
+print(name .. "-" .. number .. "-" .. color)
+
 -- renomeando comandos
 diga = print
 diga("olá mundo")
 
---recebendo atributo do teclado
+-- recebendo atributo do teclado
 diga("Qual seu nome?")
 name = io.read()
-print("olá "..name)
+print("olá " .. name)
 io.read()
 
 -- Data Types

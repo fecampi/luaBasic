@@ -10,16 +10,17 @@ print("-- Multi-Dimensional")
 -- Initializing the array
 max = 4
 array = {}
-for line=1,max do
-   array[line] = {}
-      for col=1,max do
-         array[line][col] = "line = "..line..", col = "..col
-      end
+for line = 1, max do
+    array[line] = {}
+    for col = 1, max do
+        array[line][col] = "line = " .. line .. ", col = " .. col
+    end
 end
 
 -- Accessing the array
-for line=1,max do
-    for col=1,max do
-       print(array[line][col])
-    end
- end
+for line = 1, max do for col = 1, max do print(array[line][col]) end end
+
+--  unpack
+boxPack = {"computer","monitor","mouse"}
+item1, item2, item3 = table.unpack(boxPack)
+print(item1, item2, item3)
