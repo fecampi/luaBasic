@@ -102,3 +102,23 @@ local name = io.read()
 print()
 print("Seja bem vindo ao sistema " .. name .. ".")
 
+--Callback
+function binary_op(a, b, callback)
+	return callback(a, b);
+end
+
+function  plus(a, b) return a + b end
+
+print(binary_op(5, 3, plus));
+
+--Callback 2
+callback = function ()
+    print("oi")
+ end
+ 
+ function caller(callback)
+     callback()
+ end
+ 
+ -- run caller function
+ caller(callback)

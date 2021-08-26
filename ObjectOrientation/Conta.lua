@@ -39,3 +39,5 @@ function Conta.imprimirSaldo(self)
     print("======================================")
     print()
 end
+
+return Conta
