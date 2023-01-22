@@ -21,26 +21,39 @@ until (a > 15)
 -- for numérico
 print()
 print("--for numerico--")
-for i = 10, 1, -2 do print(i) end
+for i = 10, 1, -2 do
+    print(i)
+end
 
 print()
 print("--for tabelas--")
-local tabPaises = {
-    "Brasil", "Argentina", "Canada", "Grécia", "France", "Germany"
-}
-for key = 1, #tabPaises, 1 do print(key .. "-" .. tabPaises[key]) end
+local tabPaises = {"Brasil", "Argentina", "Canada", "Grécia", "France", "Germany"}
+for key = 1, #tabPaises, 1 do
+    print(key .. "-" .. tabPaises[key])
+end
 
 -- For Generico--
 -- Pairs
 print()
 print("--for generico(Pairs)--")
-for key, value in pairs(tabPaises) do print(key .. "-" .. value) end
+for key, value in pairs(tabPaises) do
+    print(key .. "-" .. value)
+end
 
 -- for numéricos()
 print()
 print("--for numerico(somente interáveis)--")
-tabNumbers = {one = "one", 2, 3, 5, six = 6, 7}
-for key, value in ipairs(tabNumbers) do print(key .. "-" .. value) end
+tabNumbers = {
+    one = "one",
+    2,
+    3,
+    5,
+    six = 6,
+    7
+}
+for key, value in ipairs(tabNumbers) do
+    print(key .. "-" .. value)
+end
 
 -- nested Loops( loops aninhados)
 print()
@@ -49,9 +62,13 @@ j = 2
 for i = 2, 10 do
     for j = 2, (i / j), 2 do
 
-        if (not (i % j)) then break end
+        if (not (i % j)) then
+            break
+        end
 
-        if (j > (i / j)) then print("Value of i is", i) end
+        if (j > (i / j)) then
+            print("Value of i is", i)
+        end
 
     end
 end
