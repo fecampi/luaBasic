@@ -1,40 +1,42 @@
-Conta = {cliente = "Não Registrado", saldo = 0}
+Conta = {}
 
--- Esqueminha para o lua aceitar a classe(pseudo-construtor)
-function Conta:new(o)
-    o = o or {}
-    setmetatable(o, self)
+-- Pseudo-constructor for Lua to accept the class
+function Conta:new(client, balance)
+    local account = {}
+    setmetatable(account, self)
     self.__index = self
-    -- metodos a serem chamados no contrutor
-    -- print("Saldo: "..(o.saldo)) ou
-    o.imprimirSaldo(o)
-    return o
+    account.client = client or {
+        name = "not found"
+    }
+    account.balance = balance or 0 -- Define balance as 0 if no balance is provided
+    return account
 end
 
-function Conta.sacar(self, value)
-    self.saldo = self.saldo - value
-    self.imprimirSaldo(self)
+function Conta:withdraw(value)
+    self.balance = self.balance - value
+    self:printBalance()
 end
 
-function Conta.depositar(self, value)
-    self.saldo = self.saldo + value
-    self.imprimirSaldo(self)
+function Conta:deposit(value)
+    self.balance = self.balance + value
+    self:printBalance()
 end
 
-function Conta.tranferir(self, Conta, value)
-    self.saldo = self.saldo - value
-    Conta.saldo = Conta.saldo + value
+function Conta:transfer(destAccount, value)
+    self.balance = self.balance - value
+    destAccount.balance = destAccount.balance + value
+    self:printBalance()
 end
 
-function Conta.imprimirSaldo(self)
+function Conta:printBalance()
     print()
     print("======================================")
-    print("           SISTEMA BANCÁRIO           ")
+    print(" BANKING SYSTEM ")
     print("======================================")
     print()
-    print("CLIENTE: " .. self.cliente)
+    print("CLIENT: " .. self.client.name)
     print()
-    print("SALDO: " .. self.saldo)
+    print("BALANCE: " .. self.balance)
     print()
     print("======================================")
     print()
