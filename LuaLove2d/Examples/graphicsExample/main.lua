@@ -3,7 +3,8 @@ function love.load()
     font1 = love.graphics.newFont("fonts/Roboto-Black.ttf", 24)
     font2 = love.graphics.newFont("fonts/Lobster-Regular.ttf", 36)
     -- Carregando a imagem
-    image = love.graphics.newImage("images/tux.png")
+    images = {}
+    images.tux = love.graphics.newImage("images/tux.png")
 end
 
 function love.draw()
@@ -34,7 +35,7 @@ function love.draw()
 
     -- Desenhando uma imagem( deixando a imagem branca antes)
     love.graphics.setColor(1, 1, 1, 1)
-    love.graphics.draw(image, love.graphics.getWidth() / 2, 150)
+    love.graphics.draw(images.tux, love.graphics.getWidth() / 2, 150)
 
     -- Define a fonte 1
     love.graphics.setFont(font1)
