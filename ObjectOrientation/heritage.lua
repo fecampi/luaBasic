@@ -18,6 +18,10 @@ function Animal:print()
     print(self.name .. " print")
 end
 
+function Animal:update()
+    print("update")
+end
+
 -- Classe derivada
 local Cat = Animal:new()
 
@@ -34,7 +38,14 @@ function Cat:catchMouse()
     self:print("oi")
 end
 
+function Cat:update()
+    Animal.update(self)
+    print("update 2")
+end
+
+
 local myCat = Cat:new("Fluffy", "salmon")
 myCat:makeSound()
 myCat:catchMouse()
+myCat:update()
 
