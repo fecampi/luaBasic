@@ -1,13 +1,12 @@
 -- Classe base
 local Animal = {}
+Animal.__index = Animal
 
 function Animal:new(name, sound)
-    local obj = {}
-    obj.name = name or ""
-    obj.sound = sound or ""
-    setmetatable(obj, self)
-    self.__index = self
-    return obj
+    local self = setmetatable({}, Animal)
+    self.name = name or ""
+    self.sound = sound or ""
+    return self
 end
 
 function Animal:makeSound()
@@ -24,13 +23,12 @@ end
 
 -- Classe derivada
 local Cat = Animal:new()
+Cat.__index = Cat
 
 function Cat:new(name, favoriteFood)
-    local obj = Animal:new(name, "meow")
-    obj.favoriteFood = favoriteFood or "tuna"
-    setmetatable(obj, self)
-    self.__index = self
-    return obj
+    local self = setmetatable(Animal:new(name, "meow"), Cat)
+    self.favoriteFood = favoriteFood or "tuna"
+    return self
 end
 
 function Cat:catchMouse()
@@ -42,7 +40,6 @@ function Cat:update()
     Animal.update(self)
     print("update 2")
 end
-
 
 local myCat = Cat:new("Fluffy", "salmon")
 myCat:makeSound()

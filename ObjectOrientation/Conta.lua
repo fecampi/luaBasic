@@ -1,15 +1,13 @@
 Conta = {}
+Conta.__index = Conta
 
 -- Pseudo-constructor for Lua to accept the class
 function Conta:new(client, balance)
-    local account = {}
-    setmetatable(account, self)
-    self.__index = self
-    account.client = client or {
-        name = "not found"
-    }
-    account.balance = balance or 0 -- Define balance as 0 if no balance is provided
-    return account
+    local self = setmetatable({}, Conta)
+    self.client = client or  "not found"
+    self.balance = balance or 0
+    self.name = "not found"
+    return self
 end
 
 function Conta:withdraw(value)
